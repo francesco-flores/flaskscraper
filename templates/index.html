@@ -22,23 +22,33 @@
                 </tr>
             </thead>
             <tbody id="tableBody">
-                {% for article in articles %}
-                    <tr>
-                        <td><strong>{{ article.title }}</strong></td>
-                        <td>
-                            {% if article.url %}
-                                <a href="{{ article.url }}" target="_blank">{{ article.url }}</a>
-                            {% else %}
-                                No URL available
-                            {% endif %}
-                        </td>
-                        <td>
-                            <button type="button" onclick="deleteRow(this)">Delete</button>
-                        </td>
-                    </tr>
-                {% endfor %}
+                
             </tbody>
         </table>
+
+        <script>
+            const currentArticles = JSON.parse('{{ articles | tojson | safe }}');
+            function generateTable() {
+                const tableBody = document.getElementById('tableBody');
+                tableBody.innerHTML = '';
+                currentArticles.forEach((article, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><strong>${article.title}</strong></td>
+                        <td>${article.url ? `<a href="${article.url}" target="_blank">${article.url}</a>` : 'No URL available'}</td>
+                        <td><button type="button" onclick="deleteRow(${index})">Delete</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            function deleteRow(index) {
+                currentArticles.splice(index, 1);
+                generateTable();
+            }
+
+            generateTable();
+        </script>
     {% endif %}
 </body>
 </html>
