@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Scrape Articles</title>
+</head>
+<body>
+    <form action="/" method="get">
+        <input type="text" id="searchBar" name="url" placeholder="Inserisci l'url dell'articolo..." required>
+        <button type="submit">search</button>
+    </form>
+
+    {% if articles %}
+        <h1>Articles from {{url}}</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>URL</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                {% for article in articles %}
+                    <tr>
+                        <td><strong>{{ article.title }}</strong></td>
+                        <td>
+                            {% if article.url %}
+                                <a href="{{ article.url }}" target="_blank">{{ article.url }}</a>
+                            {% else %}
+                                No URL available
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button type="button" onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</body>
+</html>
