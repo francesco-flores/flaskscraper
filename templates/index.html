@@ -14,10 +14,10 @@
 
     {% if articles %}
         <h1>Articles from {{url}}</h1>
-
-        <button type="button" onclick="exportToCSV()">Export to CSV</button>
-        <button type="button" onclick="exportToJSON()">Export to JSON</button>
-        
+        <div class="exportContainer">
+            <button class="exportButton" type="button" onclick="exportToCSV()">Export to CSV</button>
+            <button class="exportButton" type="button" onclick="exportToJSON()">Export to JSON</button>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -41,7 +41,7 @@
                     row.innerHTML = `
                         <td><strong>${article.title}</strong></td>
                         <td>${article.url ? `<a href="${article.url}" target="_blank">${article.url}</a>` : 'No URL available'}</td>
-                        <td><button type="button" onclick="deleteRow(${index})">Delete</button></td>
+                        <td><button type="button" class="deleteButton" onclick="deleteRow(${index})">Delete</button></td>
                     `;
                     tableBody.appendChild(row);
                 });

@@ -1,0 +1,119 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: rgb(245, 191, 91);
+}
+
+title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background-color: #f9fafb;
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+}
+
+.exportContainer {
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+.exportButton {
+    background-color: #3d98e8; /* bg-red-600 */
+    color: #ffffff; /* text-white */
+    border: 1px solid #4f3403; /* border-red-600 */
+    padding: 6px 12px; /* px-4 py-2 */
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: separate;
+    margin-top: auto;
+    width: 100%;
+    text-align: left;
+    color: #6b7280; /* text-gray-500 */
+}
+
+thead {
+    text-transform: uppercase;
+    background-color: #f9fafb; /* bg-gray-50 */
+    color: #6b7280; /* text-gray-700 */
+}
+
+thead th {
+    padding: 12px 24px; /* px-6 py-3 */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* bg-white */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f3f4f6; /* bg-gray-50 */
+}
+
+tbody tr {
+    border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+}
+
+tbody th, tbody td {
+    padding: 12px 24px; /* px-6 py-4 */
+}
+
+tbody th {
+    font-weight: 600;
+    color: #111827; /* text-gray-900 */
+    white-space: nowrap;
+}
+
+tbody td a {
+    color: #3b82f6; /* text-blue-600 */
+    text-decoration: none;
+}
+
+tbody td a:hover {
+    text-decoration: underline;
+}
+
+.dark tbody tr:nth-child(odd) {
+    background-color: #1f2937; /* dark:bg-gray-900 */
+}
+
+.dark tbody tr:nth-child(even) {
+    background-color: #374151; /* dark:bg-gray-800 */
+}
+
+.dark tbody tr {
+    border-bottom: 1px solid #4b5563; /* dark:border-gray-700 */
+}
+
+.dark tbody th {
+    color: #ffffff; /* dark:text-white */
+}
+
+.dark tbody td {
+    color: #d1d5db; /* dark:text-gray-400 */
+}
+
+.dark thead {
+    background-color: #374151; /* dark:bg-gray-700 */
+    color: #d1d5db; /* dark:text-gray-400 */
+}
+
+.dark tbody td a {
+    color: #3b82f6; /* dark:text-blue-500 */
+}
+
+.deleteButton {
+    background-color: #dc2626; /* bg-red-600 */
+    color: #ffffff; /* text-white */
+    border: 1px solid #dc2626; /* border-red-600 */
+    padding: 6px 12px; /* px-4 py-2 */
+    border-radius: 6px;
+    text-decoration: none;
+}
